@@ -8,13 +8,10 @@ if (isset($_POST['btnThaphuong'])) {
 
     $sql = "INSERT INTO wishes (wish_text, image_path) VALUES ('$wishText', '$imagePath')";
     if ($conn->query($sql) === TRUE) {
-        echo '<script>alert("Uớc nguyện của bạn đã được gửi đi!");window.location.href = "index.html";</script>';
+        echo '<script>alert("Uớc nguyện của bạn đã được gửi đi!");</script>';
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-} else {
-    echo "Dữ liệu không hợp lệ!";
 }
-
 $conn->close();
 ?>

@@ -32,12 +32,14 @@
       </div>
 
       <!-- index.html -->
-<form class="form" method="post" action="https://VieKean.github.io/thaphuong/save_wish.php" id="wishForm">
+<form class="form" method="post" id="wishForm">
   <input type="text" placeholder="Nhập điều ước của thí chủ vào đây nè 🙏" name="wish_text" />
   <input type="hidden" name="btnThaphuong" value="Thắp Hương" id="btnThaphuong">
   <button type="button" class="btn" id="submitBtn">Thắp Hương</button>
 </form>
 <a href="cay.php">xem cây</a>
+
+<?php require ('save_wish.php'); ?>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
