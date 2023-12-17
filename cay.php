@@ -117,6 +117,7 @@
 
     <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
+    <a href="index.html">Về trang chủ</a>
 
     <script>
         var popup = document.getElementById('popup');
