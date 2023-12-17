@@ -1,0 +1,82 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thắp hương để qua môn</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body id="background">
+    <div class="container">
+      <div class="child phat">
+        <div class="title"></div>
+        <img class="imganhphat" src="img_phat-removebg-preview.png" alt="" />
+        <img class="may" src="may-removebg-preview.png" alt="" />
+      </div>
+
+      <div class="child img--bantho">
+        <img class="quehuong" src="nhang.png" alt="" />
+        <img class="add" src="add_icon.png" alt="">
+        <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
+        <img class="temple" src="bkutemple.png" alt="" />
+        <img id="logo" style="display: block;position: absolute;top: 236px;left:198px; width: 90px;" src="logo.png" alt="" />
+        <img src="ctut.png"  style="display: block;position: absolute;top: 122px;left:168px; width: 146px; height: 36px;"  alt="">
+      </div>
+
+      <!-- index.html -->
+<form class="form" method="post" action="save_wish.php" id="wishForm">
+  <input type="text" placeholder="Nhập điều ước của thí chủ vào đây nè 🙏" name="wish_text" />
+  <input type="hidden" name="btnThaphuong" value="Thắp Hương" id="btnThaphuong">
+  <button type="button" class="btn" id="submitBtn">Thắp Hương</button>
+</form>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.getElementById("btnThaphuong"); 
+    const submitBtn = document.getElementById("submitBtn");
+    const quehuong = document.querySelector(".quehuong");
+    const phat = document.querySelector(".phat");
+
+    let jsProcessingComplete = false;
+
+    submitBtn.addEventListener("click", function(event) {
+      event.preventDefault();
+
+      quehuong.classList.add("thaphuong");
+      phat.classList.add("hienphat");
+      setTimeout(function() {
+
+        // Đặt giá trị mới cho btnThaphuong
+        btn.value = "Đã Thắp Hương";
+        
+
+        jsProcessingComplete = true;
+
+        // Sau khi tất cả xử lý JS đã hoàn tất, gửi form
+        checkAndSubmitForm();
+      }, 7000);
+    });
+    
+
+    function checkAndSubmitForm() {
+      // Kiểm tra xem tất cả xử lý JS đã hoàn tất hay chưa
+      if (jsProcessingComplete) {
+        document.getElementById("wishForm").submit();
+      } else {
+        // Nếu chưa hoàn tất, chờ 100ms rồi kiểm tra lại
+        setTimeout(checkAndSubmitForm, 100);
+      }
+    }
+  });
+</script>
+    </div>
+  </body>
+</html>

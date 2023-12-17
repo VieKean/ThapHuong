@@ -1,0 +1,151 @@
+*,
+*:before,
+*:after {
+        box-sizing: border-box;
+}
+
+* {
+        margin: 0;
+        padding: 0;
+        font: inherit;
+        font-family: 'Roboto', sans-serif;
+}
+
+img,
+picture,
+svg,
+video {
+        display: block;
+        max-width: 100%;
+}
+
+body {
+        min-height: 100vh;
+}
+.parent {
+        position: relative;
+}
+      
+.child {
+        position: absolute;
+}
+
+.img--bantho { 
+        z-index: 2;
+        max-height: 700px;
+        max-width: 500px;
+        margin: 0 auto;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 5px solid saddlebrown;
+}
+#input-file {
+        display: none;
+}
+.add {
+        position: absolute;
+        max-height: 20vh;
+        max-width: 20vh;
+        border-radius: 10px;
+}
+.phat {
+        z-index: 1;
+        width: 400px;
+        opacity: 0;
+        filter: blur(10px);
+        transition: opacity 5s ease-in-out, filter 5s ease-in-out;
+}
+.quehuong {
+        z-index: 4;
+        margin-top: 350px;
+        margin-left: 100px;
+        position: absolute;
+        width: 20px;
+        height: 200px;
+        top: 0;
+        display: flex;
+        transform: translateY(-50px);
+        opacity: 0;
+        filter: blur(10px);
+        transition: opacity 1s ease-in-out, filter 2s ease-in-out, transform 2s ease-in;
+        transition: all 3s;
+}
+
+.thaphuong {
+        transform: translateY(0px) !important;
+        opacity: 1 !important;
+        filter: blur(0px);
+}
+
+
+.may {
+        position: absolute;
+        transform: translate(-70px, -116px);
+}
+
+.title {
+        position: absolute;
+        transform: translateX(400px);
+        font-size: 20px;
+        padding: 20px;
+}
+
+.hienphat {
+        opacity: 1 !important;
+        filter: blur(0px);
+}
+
+.form {
+        padding: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+}
+
+.form input {
+        width: 350px;
+        padding: 10px 20px;
+        border: 1px solid saddlebrown;
+}
+
+.form button {
+        background-color: saddlebrown;
+        border: 1px solid saddlebrown;
+        font-size: 20px;
+        padding: 10px;
+        font-weight: bold;
+        color: white;
+        transition: background-color 0.3s;
+
+}
+.form button:active {
+        background-color: rgb(64, 31, 8);
+}
+.audio {
+        display: none;
+}
+@media (max-width: 768px) {
+        .img--bantho {
+                justify-content: center;
+                align-self: flex-end;
+        }
+
+        .phat {
+                display: none;
+        }
+        .quehuong {
+                margin-top: 250px;
+        }
+      }
+@media screen and (max-width:600px) {
+        .phat {
+                max-width: 350px;
+        }
+
+
+
+}
